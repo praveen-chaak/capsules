@@ -153,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (cardsSection && progressWidget && progressFill) {
     ScrollTrigger.create({
       trigger: cardsSection,
-      start: "top bottom",
-      end: "bottom top",
+      start: "top top",
+      end: "bottom bottom",
       onEnter: () => {
         if (introCard.contentRevealed) {
           gsap.to(progressWidget, { autoAlpha: 1, duration: 0.2 });
