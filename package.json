@@ -23,7 +23,6 @@
   "dependencies": {
     "esbuild": "^0.27.3",
     "fdir": "^6.5.0",
-    "fsevents": "^2.3.3",
     "gsap": "^3.14.2",
     "lenis": "^1.3.17",
     "nanoid": "^3.3.11",
@@ -35,6 +34,7 @@
     "tinyglobby": "^0.2.15",
     "vite": "^7.3.1"
   },
-  "devDependencies": {}
+  "optionalDependencies": {
+    "fsevents": "^2.3.3"
+  }
 }
-
