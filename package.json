@@ -1,18 +1,40 @@
 {
-  "name": "vscode-explorer",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "capsules",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/praveen-chaak/capsules#readme",
+  "bugs": {
+    "url": "https://github.com/praveen-chaak/capsules/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praveen-chaak/capsules.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
+  "dependencies": {
+    "esbuild": "^0.27.3",
+    "fdir": "^6.5.0",
+    "fsevents": "^2.3.3",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.17",
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.3",
+    "postcss": "^8.5.6",
+    "rollup": "^4.59.0",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.15",
     "vite": "^7.3.1"
   },
-  "dependencies": {
-    "gsap": "^3.14.2",
-    "lenis": "^1.3.17"
-  }
+  "devDependencies": {}
 }
+
