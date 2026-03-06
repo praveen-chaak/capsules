@@ -10,10 +10,10 @@ RUN npm install --include=dev
 COPY . .
 RUN npm run build
 
-# EXPOSE 5173
-# CMD ["npm","run","dev","--","--host","0.0.0.0","--port","5173"]
+EXPOSE 5173
+CMD ["npm","run","dev","--","--host","0.0.0.0","--port","5173"]
 # Serve stage
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-# COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
