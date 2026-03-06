@@ -7,6 +7,6 @@ export default defineConfig({
     host: true,      // binds to 0.0.0.0
     port: 5173,
     strictPort: true,
-    allowedHosts: ["*"] // allow all hosts (not recommended for production)
+    allowedHosts: ["api.kelmeindia.online"] // allow all hosts (not recommended for production)
   }
 });
