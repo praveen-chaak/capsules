@@ -1,15 +1,14 @@
 FROM node:22-alpine
-
 WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+# force include devDependencies (so vite plugins exist during build)
+ENV NODE_ENV=development
+RUN npm install --include=dev
 
 COPY . .
-
 RUN npm run build
 
-EXPOSE 3000
-
-CMD ["npm","run dev"]
+EXPOSE 5173
+CMD ["npm","run","preview","--","--host","0.0.0.0","--port","5173"]

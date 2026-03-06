@@ -36,5 +36,8 @@
   },
   "optionalDependencies": {
     "fsevents": "^2.3.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.4"
   }
 }
