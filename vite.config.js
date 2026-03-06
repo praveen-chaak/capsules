@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     host: true,      // binds to 0.0.0.0
     port: 5173,
-    strictPort: true
+    strictPort: true,
+    allowedHosts: ["*"] // allow all hosts (not recommended for production)
   }
 });
