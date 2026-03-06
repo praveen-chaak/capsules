@@ -1,6 +1,6 @@
 FROM node:22-alpine
 WORKDIR /app
-
+RUN apk add --no-cache bash
 COPY package*.json ./
 
 # force include devDependencies (so vite plugins exist during build)
