@@ -1,17 +1,15 @@
-FROM node:22-alpine
+# Build stage
+FROM node:22-alpine AS build
 WORKDIR /app
 
 COPY package*.json ./
-
-# force include devDependencies (so vite plugins exist during build)
-ENV NODE_ENV=development
-RUN npm install --include=dev
+RUN npm ci --include=dev
 
 COPY . .
 RUN npm run build
 
-# EXPOSE 5173
-# CMD ["npm","run","dev","--","--host","0.0.0.0","--port","5173"]
+# Serve stage
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
+
 EXPOSE 80
