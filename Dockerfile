@@ -1,13 +1,17 @@
-# Build stage
-FROM node:22-alpine AS build
+FROM node:22-alpine
 WORKDIR /app
+
 COPY package*.json ./
-RUN npm ci --include=dev
+
+# force include devDependencies (so vite plugins exist during build)
+ENV NODE_ENV=development
+RUN npm install --include=dev
+
 COPY . .
 RUN npm run build
 
-# Serve stage
-FROM nginx:alpine
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80
+EXPOSE 5173
+CMD ["npm","run","dev","--host","0.0.0.0","--port","5173"]
+# FROM nginx:alpine
+# COPY --from=build /app/dist /usr/share/nginx/html
+# EXPOSE 80
